@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="icon" href="https://exchange.pancakeswap.finance/images/coins/0x55d398326f99059ff775485246999027b3197955.png" type="image/x-icon"/>  
-    <title>SWAP神器</title>
+    <title>SWAP科技</title>
   </head>
   <style> 
 video{
@@ -75,12 +75,12 @@ video{
     <label>token0:</label>
     <input id="token0"  type="text" style="width:200px;"> 
     <label>token0合约:</label>
-    <input id="token00"  type="text" style="width:250px;"> 
+    <input id="token00"  type="text" style="width:325px;"> 
     <br /> 
     <label>token1:</label>
     <input id="token1"  type="text" style="width:200px;">
     <label>token1合约:</label>
-    <input id="token11"  type="text" style="width:250px;"> 
+    <input id="token11"  type="text" style="width:325px;"> 
     <br/>
     <div class = "execute">
     <button onclick="App.convert(1)" style="padding-left: 20px;padding-right: 20px;">兑换</button>
@@ -96,16 +96,38 @@ video{
     <label>token0:</label>
     <input id="utoken0"  type="text" style="width:200px;"> 
     <label>token0合约:</label>
-    <input id="utoken00"  type="text" style="width:250px;"> 
+    <input id="utoken00"  type="text" style="width:325px;"> 
     <br /> 
     <label>token1:</label>
     <input id="utoken1"  type="text" style="width:200px;">
     <label>token1合约:</label>
-    <input id="utoken11"  type="text" style="width:250px;"> 
+    <input id="utoken11"  type="text" style="width:325px;"> 
     <div class = "execute">
     <button onclick="App.convert(2)" style="padding-left: 20px;padding-right: 20px;">兑换</button>
     <button onclick="App.sell(2)" style="padding-left: 20px;padding-right: 20px;">出售</button>
     </div>
+</div>
+<div>
+   <h2>指定交易对</h2>
+  <label>指定合约: </label>
+  <input id="assign" type="text" style="width:325px;" value="">
+  <h3><label id = "atokenprice"></label></h3>
+  <label>流动性合约:</label>
+  <input id="atokenpair"  type="text" style="width:350px;">  
+  <br />
+  <label>token0:</label>
+  <input id="atoken0"  type="text" style="width:200px;"> 
+  <label>token0合约:</label>
+  <input id="atoken00"  type="text" style="width:325px;"> 
+  <br /> 
+  <label>token1:</label>
+  <input id="atoken1"  type="text" style="width:200px;">
+  <label>token1合约:</label>
+  <input id="atoken11"  type="text" style="width:325px;"> 
+  <div class = "execute">
+  <button onclick="App.convert(3)" style="padding-left: 20px;padding-right: 20px;">兑换</button>
+  <button onclick="App.sell(3)" style="padding-left: 20px;padding-right: 20px;">出售</button>
+  </div>
 </div>
 
 
