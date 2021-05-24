@@ -3,6 +3,7 @@
   <head>
     <link rel="icon" href="https://exchange.pancakeswap.finance/images/coins/0x55d398326f99059ff775485246999027b3197955.png" type="image/x-icon"/>  
     <title>SWAP神器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
   </head>
   <style> 
 video{
@@ -34,10 +35,16 @@ video{
   font-weight:700;
   color: #90EE90;
 }
+#main{
+width:1366px;
+height:457px;
+MARGIN-RIGHT: auto;
+MARGIN-LEFT: auto;
+    }
 
     </style> 
   <body>
-   
+   <div id="main">
     <video width="100%" autoplay="autoplay" loop="loop" muted="muted">
       <source src="https://yys.v.netease.com/2021/0427/bc34312e686dccd485a0c08b21d8fba8.mp4" type="video/mp4"></source>
 </video>
@@ -134,7 +141,7 @@ video{
   <button onclick="App.sell(3)" style="padding-left: 20px;padding-right: 20px;">出售</button>
   </div>
 </div>
-
+</div>
 
 <p id="status"></p>
     <script src="index.min.js"></script>
