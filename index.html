@@ -23,12 +23,17 @@ video{
          video{
       position: fixed;
         z-index: -9999;
-       
+        font-family:”微软雅黑”;
       }     
     div.execute{
     margin-top: 10px;
 }
 
+.time{
+  font-size: 40px;
+  font-weight:700;
+  color: #90EE90;
+}
 
     </style> 
   <body>
@@ -65,22 +70,22 @@ video{
       <button onclick="App.approve()">提前授权</button>
       </div>
     <div>
-    <h2 id="info"> </h2>
+    <h2 id="info" class = "time"> </h2>
     <h3 id="balance"> </h3>
     <h2>WETH交易对</h2>
     <h3><label id = "tokenprice"></label></h3>
     <label>流动性合约:</label>
-    <input id="tokenpair"  type="text" style="width:350px;">  
+    <input id="tokenpair"  type="text" style="width:350px;" readonly="true">  
     <br />
     <label>token0:</label>
-    <input id="token0"  type="text" style="width:200px;"> 
+    <input id="token0"  type="text" style="width:200px;" readonly="true"> 
     <label>token0合约:</label>
-    <input id="token00"  type="text" style="width:325px;"> 
+    <input id="token00"  type="text" style="width:325px;" readonly="true"> 
     <br /> 
     <label>token1:</label>
-    <input id="token1"  type="text" style="width:200px;">
+    <input id="token1"  type="text" style="width:200px;" readonly="true">
     <label>token1合约:</label>
-    <input id="token11"  type="text" style="width:325px;"> 
+    <input id="token11"  type="text" style="width:325px;" readonly="true"> 
     <br/>
     <div class = "execute">
     <button onclick="App.convert(1)" style="padding-left: 20px;padding-right: 20px;">兑换</button>
@@ -91,17 +96,17 @@ video{
     <h2>USDT交易对</h2>
     <h3><label id = "utokenprice"></label></h3>
     <label>流动性合约:</label>
-    <input id="utokenpair"  type="text" style="width:350px;">  
+    <input id="utokenpair"  type="text" style="width:350px;" readonly="true">  
     <br />
     <label>token0:</label>
-    <input id="utoken0"  type="text" style="width:200px;"> 
+    <input id="utoken0"  type="text" style="width:200px;" readonly="true">  
     <label>token0合约:</label>
-    <input id="utoken00"  type="text" style="width:325px;"> 
+    <input id="utoken00"  type="text" style="width:325px;" readonly="true"> 
     <br /> 
     <label>token1:</label>
-    <input id="utoken1"  type="text" style="width:200px;">
+    <input id="utoken1"  type="text" style="width:200px;" readonly="true">
     <label>token1合约:</label>
-    <input id="utoken11"  type="text" style="width:325px;"> 
+    <input id="utoken11"  type="text" style="width:325px;" readonly="true"> 
     <div class = "execute">
     <button onclick="App.convert(2)" style="padding-left: 20px;padding-right: 20px;">兑换</button>
     <button onclick="App.sell(2)" style="padding-left: 20px;padding-right: 20px;">出售</button>
@@ -113,17 +118,17 @@ video{
   <input id="assign" type="text" style="width:325px;" value="">
   <h3><label id = "atokenprice"></label></h3>
   <label>流动性合约:</label>
-  <input id="atokenpair"  type="text" style="width:350px;">  
+  <input id="atokenpair"  type="text" style="width:350px;" readonly="true">  
   <br />
   <label>token0:</label>
-  <input id="atoken0"  type="text" style="width:200px;"> 
+  <input id="atoken0"  type="text" style="width:200px;" readonly="true"> 
   <label>token0合约:</label>
-  <input id="atoken00"  type="text" style="width:325px;"> 
+  <input id="atoken00"  type="text" style="width:325px;" readonly="true"> 
   <br /> 
   <label>token1:</label>
-  <input id="atoken1"  type="text" style="width:200px;">
+  <input id="atoken1"  type="text" style="width:200px;" readonly="true">
   <label>token1合约:</label>
-  <input id="atoken11"  type="text" style="width:325px;"> 
+  <input id="atoken11"  type="text" style="width:325px;" readonly="true"> 
   <div class = "execute">
   <button onclick="App.convert(3)" style="padding-left: 20px;padding-right: 20px;">兑换</button>
   <button onclick="App.sell(3)" style="padding-left: 20px;padding-right: 20px;">出售</button>
@@ -132,6 +137,6 @@ video{
 
 
 <p id="status"></p>
-    <script src="index.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
