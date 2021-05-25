@@ -53,7 +53,8 @@ MARGIN-LEFT: auto;
       <select name = "swap" id = "swap" onchange="App.selectChange()">
         <option value = "0x10ED43C718714eb63d5aA57B78B54704E256024E">PancakeSwap</option>
         <option value = "0xCDe540d7eAFE93aC5fE6233Bee57E1270D3E330F">BakerySwap</option>
-        <option value = "0xED7d5F38C79115ca12fe6C0041abb22F0A06C300">MdexSwap</option>
+        <option value = "0x7dae51bd3e3376b8c7c4900e9107f12be3af1ba8">MdexSwap(bsc)</option>
+        <option value = "0xED7d5F38C79115ca12fe6C0041abb22F0A06C300">MdexSwap(heco)</option>
       </select>
     <label>合约土狗地址: </label>
     <input id="DogAddress" type="text" style="width:350px;" value="" oninput="App.getDogAddress()">
@@ -141,8 +142,6 @@ MARGIN-LEFT: auto;
   <button onclick="App.sell(3)" style="padding-left: 20px;padding-right: 20px;">出售</button>
   </div>
 </div>
-
-
 <p id="status"></p>
 </div>
     <script src="index.min.js"></script>
