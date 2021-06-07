@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="https://exchange.pancakeswap.finance/images/coins/0x55d398326f99059ff775485246999027b3197955.png" type="image/x-icon"/>  
+    <title>SWAP神器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+  </head>
+  <style> 
+video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto; 
+    z-index: -100; 
+    -webkit-filter: grayscale(5%);
+}
+    body{text-align:center;
+         background-color:#FFEBCD;
+         margin:0;
+         color: #FFFFFF;
+         } 
+         video{
+      position: fixed;
+        z-index: -9999;
+        font-family:”微软雅黑”;
+      }     
+    div.execute{
+    margin-top: 10px;
+}
+
+.time{
+  font-size: 40px;
+  font-weight:700;
+  color: #69f0c3c7;
+}
+.timeto{
+  font-size: 20px;
+  color: 	#FF0000;
+}
+#main{
+width:1366px;
+height:457px;
+MARGIN-RIGHT: auto;
+MARGIN-LEFT: auto;
+    }
+
+    </style> 
+  <body>
+   <div id="main">
+    <video width="100%" autoplay="autoplay" loop="loop" muted="muted">
+      <source src="https://mdup.apdcdn.tc.qq.com/vcloud1022.tc.qq.com/1022_d30c9b80bc29438c8346f13a841e7384.f0.mp4" type="video/mp4"></source>
+</video>
+    <h1 id = "swapname" >PancakeSwap</h1>
+    <div>
+      <select name = "swap" id = "swap" onchange="App.selectChange()">
+        <option value = "0x10ED43C718714eb63d5aA57B78B54704E256024E">PancakeSwap</option>
+        <option value = "0xCDe540d7eAFE93aC5fE6233Bee57E1270D3E330F">BakerySwap</option>
+        <option value = "0x7dae51bd3e3376b8c7c4900e9107f12be3af1ba8">MdexSwap(bsc)</option>
+        <option value = "0xED7d5F38C79115ca12fe6C0041abb22F0A06C300">MdexSwap(heco)</option>
+      </select>
+    <label>合约土狗地址: </label>
+    <input id="DogAddress" type="text" style="width:350px;" value="" oninput="App.getDogAddress()">
+    <br />
+    <label>多少USDT兑换: </label>
+    <input id="USDT" type="text" style="width:40px;" value="10">
+    <label>多少ETH兑换: </label>
+    <input id="ETH" type="text" style="width:40px;" value="0.5">
+    <label>转账给指定地址: </label>
+    <input id="Address" type="text" style="width:350px;" value="" oninput="App.getAccount()">
+    <br />
+    <label>燃料价格: </label>
+    <input id="gasPrice" type="text" style="width:40px;" value="20">
+    <label>卖出数量: </label>
+    <select name = "number" id = "number">
+      <option value = "0.25">25%</option>
+      <option value = "0.5">50%</option>
+      <option value = "0.75">75%</option>
+      <option value = "1"  selected = "selected" >100%</option>
+    </select>
+    </div>
+    <div style="margin-top: 20px;"> 
+      <button onclick="App.approve()">提前授权</button>
+      </div>
+    <div>
+    <h2 id="info" class = "time"> </h2>
+    <h3 id="balance"> </h3>
+    <h2>WETH交易对</h2>
+    <h3><label id = "tokenprice"></label></h3>
+    <label>流动性合约:</label>
+    <input id="tokenpair"  type="text" style="width:350px;" readonly="true">
+    <label id="tokentime" class = "timeto"></label>  
+    <br />
+    <label>token0:</label>
+    <input id="token0"  type="text" style="width:200px;" readonly="true"> 
+    <label>token0合约:</label>
+    <input id="token00"  type="text" style="width:325px;" readonly="true"> 
+    <br /> 
+    <label>token1:</label>
+    <input id="token1"  type="text" style="width:200px;" readonly="true">
+    <label>token1合约:</label>
+    <input id="token11"  type="text" style="width:325px;" readonly="true"> 
+    <br/>
+    <div class = "execute">
+    <button onclick="App.ETHbuy()" style="padding-left: 20px;padding-right: 20px;">兑换</button>
+    <button onclick="App.ETHsell()" style="padding-left: 20px;padding-right: 20px;">出售</button>
+  </div>
+</div>
+<div>
+    <h2>USDT交易对</h2>
+    <h3><label id = "utokenprice"></label></h3>
+    <label>流动性合约:</label>
+    <input id="utokenpair"  type="text" style="width:350px;" readonly="true">  
+    <label id="utokentime" class = "timeto"></label>
+    <br />
+    <label>token0:</label>
+    <input id="utoken0"  type="text" style="width:200px;" readonly="true">  
+    <label>token0合约:</label>
+    <input id="utoken00"  type="text" style="width:325px;" readonly="true"> 
+    <br /> 
+    <label>token1:</label>
+    <input id="utoken1"  type="text" style="width:200px;" readonly="true">
+    <label>token1合约:</label>
+    <input id="utoken11"  type="text" style="width:325px;" readonly="true"> 
+    <div class = "execute">
+    <button onclick="App.convert(2)" style="padding-left: 20px;padding-right: 20px;">兑换</button>
+    <button onclick="App.sell(2)" style="padding-left: 20px;padding-right: 20px;">出售</button>
+    </div>
+</div>
+<div>
+   <h2>指定交易对</h2>
+  <label>指定合约: </label>
+  <input id="assign" type="text" style="width:325px;" value="">
+  <h3><label id = "atokenprice"></label></h3>
+  <label>流动性合约:</label>
+  <input id="atokenpair"  type="text" style="width:350px;" readonly="true">
+  <label id="atokentime" class = "timeto"></label>  
+  <br />
+  <label>token0:</label>
+  <input id="atoken0"  type="text" style="width:200px;" readonly="true"> 
+  <label>token0合约:</label>
+  <input id="atoken00"  type="text" style="width:325px;" readonly="true"> 
+  <br /> 
+  <label>token1:</label>
+  <input id="atoken1"  type="text" style="width:200px;" readonly="true">
+  <label>token1合约:</label>
+  <input id="atoken11"  type="text" style="width:325px;" readonly="true"> 
+  <div class = "execute">
+  <button onclick="App.convert(3)" style="padding-left: 20px;padding-right: 20px;">兑换</button>
+  <button onclick="App.sell(3)" style="padding-left: 20px;padding-right: 20px;">出售</button>
+  </div>
+</div>
+<p id="status"></p>
+</div>
+    <script src="index.min.js"></script>
+  </body>
+</html>
