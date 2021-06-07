@@ -15,11 +15,12 @@ video{
     width: auto;
     height: auto; 
     z-index: -100; 
-    -webkit-filter: grayscale(60%);
+    -webkit-filter: grayscale(5%);
 }
     body{text-align:center;
          background-color:#FFEBCD;
          margin:0;
+         color: #FFFFFF;
          } 
          video{
       position: fixed;
@@ -33,7 +34,11 @@ video{
 .time{
   font-size: 40px;
   font-weight:700;
-  color: #90EE90;
+  color: #69f0c3c7;
+}
+.timeto{
+  font-size: 20px;
+  color: 	#FF0000;
 }
 #main{
 width:1366px;
@@ -46,9 +51,9 @@ MARGIN-LEFT: auto;
   <body>
    <div id="main">
     <video width="100%" autoplay="autoplay" loop="loop" muted="muted">
-      <source src="https://yys.v.netease.com/2021/0427/bc34312e686dccd485a0c08b21d8fba8.mp4" type="video/mp4"></source>
+      <source src="https://mdup.apdcdn.tc.qq.com/vcloud1022.tc.qq.com/1022_d30c9b80bc29438c8346f13a841e7384.f0.mp4" type="video/mp4"></source>
 </video>
-    <h1 id = "swapname">PancakeSwap</h1>
+    <h1 id = "swapname" >PancakeSwap</h1>
     <div>
       <select name = "swap" id = "swap" onchange="App.selectChange()">
         <option value = "0x10ED43C718714eb63d5aA57B78B54704E256024E">PancakeSwap</option>
@@ -61,6 +66,8 @@ MARGIN-LEFT: auto;
     <br />
     <label>多少USDT兑换: </label>
     <input id="USDT" type="text" style="width:40px;" value="10">
+    <label>多少ETH兑换: </label>
+    <input id="ETH" type="text" style="width:40px;" value="0.5">
     <label>转账给指定地址: </label>
     <input id="Address" type="text" style="width:350px;" value="" oninput="App.getAccount()">
     <br />
@@ -83,7 +90,8 @@ MARGIN-LEFT: auto;
     <h2>WETH交易对</h2>
     <h3><label id = "tokenprice"></label></h3>
     <label>流动性合约:</label>
-    <input id="tokenpair"  type="text" style="width:350px;" readonly="true">  
+    <input id="tokenpair"  type="text" style="width:350px;" readonly="true">
+    <label id="tokentime" class = "timeto"></label>  
     <br />
     <label>token0:</label>
     <input id="token0"  type="text" style="width:200px;" readonly="true"> 
@@ -96,8 +104,8 @@ MARGIN-LEFT: auto;
     <input id="token11"  type="text" style="width:325px;" readonly="true"> 
     <br/>
     <div class = "execute">
-    <button onclick="App.convert(1)" style="padding-left: 20px;padding-right: 20px;">兑换</button>
-    <button onclick="App.sell(1)" style="padding-left: 20px;padding-right: 20px;">出售</button>
+    <button onclick="App.ETHbuy()" style="padding-left: 20px;padding-right: 20px;">兑换</button>
+    <button onclick="App.ETHsell()" style="padding-left: 20px;padding-right: 20px;">出售</button>
   </div>
 </div>
 <div>
@@ -105,6 +113,7 @@ MARGIN-LEFT: auto;
     <h3><label id = "utokenprice"></label></h3>
     <label>流动性合约:</label>
     <input id="utokenpair"  type="text" style="width:350px;" readonly="true">  
+    <label id="utokentime" class = "timeto"></label>
     <br />
     <label>token0:</label>
     <input id="utoken0"  type="text" style="width:200px;" readonly="true">  
@@ -126,7 +135,8 @@ MARGIN-LEFT: auto;
   <input id="assign" type="text" style="width:325px;" value="">
   <h3><label id = "atokenprice"></label></h3>
   <label>流动性合约:</label>
-  <input id="atokenpair"  type="text" style="width:350px;" readonly="true">  
+  <input id="atokenpair"  type="text" style="width:350px;" readonly="true">
+  <label id="atokentime" class = "timeto"></label>  
   <br />
   <label>token0:</label>
   <input id="atoken0"  type="text" style="width:200px;" readonly="true"> 
